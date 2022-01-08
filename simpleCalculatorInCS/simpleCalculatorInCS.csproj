@@ -38,8 +38,12 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="src\Calculations.cs" />
+        <Compile Include="src\CalculationType.cs" />
+        <Compile Include="src\calculation\Addition.cs" />
+        <Compile Include="src\calculation\Calculation.cs" />
+        <Compile Include="src\Program.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
