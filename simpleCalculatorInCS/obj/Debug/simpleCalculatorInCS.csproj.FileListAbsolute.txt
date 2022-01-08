@@ -1,0 +1,6 @@
+C:\Users\alica\RiderProjects\LearningCS\simpleCalculatorInCS\bin\Debug\simpleCalculatorInCS.exe
+C:\Users\alica\RiderProjects\LearningCS\simpleCalculatorInCS\bin\Debug\simpleCalculatorInCS.pdb
+C:\Users\alica\RiderProjects\LearningCS\simpleCalculatorInCS\obj\Debug\simpleCalculatorInCS.csprojAssemblyReference.cache
+C:\Users\alica\RiderProjects\LearningCS\simpleCalculatorInCS\obj\Debug\simpleCalculatorInCS.csproj.CoreCompileInputs.cache
+C:\Users\alica\RiderProjects\LearningCS\simpleCalculatorInCS\obj\Debug\simpleCalculatorInCS.exe
+C:\Users\alica\RiderProjects\LearningCS\simpleCalculatorInCS\obj\Debug\simpleCalculatorInCS.pdb
