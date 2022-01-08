@@ -7,6 +7,12 @@
         Multiplication,
         Division,
         Pow,
-        Abs
+        Abs,
+        Sign,
+        Max,
+        Min,
+        Round,
+        Sin,
+        Cos
     }
 }

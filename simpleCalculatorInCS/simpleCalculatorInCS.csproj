@@ -44,9 +44,15 @@
         <Compile Include="src\calculation\Abs.cs" />
         <Compile Include="src\calculation\Addition.cs" />
         <Compile Include="src\calculation\Calculation.cs" />
+        <Compile Include="src\calculation\Cos.cs" />
         <Compile Include="src\calculation\Division.cs" />
+        <Compile Include="src\calculation\Max.cs" />
+        <Compile Include="src\calculation\Min.cs" />
         <Compile Include="src\calculation\Multiplication.cs" />
         <Compile Include="src\calculation\Pow.cs" />
+        <Compile Include="src\calculation\Round.cs" />
+        <Compile Include="src\calculation\Sign.cs" />
+        <Compile Include="src\calculation\Sin.cs" />
         <Compile Include="src\calculation\Subtraction.cs" />
         <Compile Include="src\Program.cs" />
     </ItemGroup>

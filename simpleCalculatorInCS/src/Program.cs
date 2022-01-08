@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using simpleCalculatorInCS.calculation;
 
 namespace simpleCalculatorInCS
@@ -8,91 +9,67 @@ namespace simpleCalculatorInCS
         public static void Main(string[] args)
         {
             Calculations.init();
-            
-            Console.WriteLine("Merhaba! Lütfen yapacağınız işlemin numarasını giriniz: ");
-            foreach (var cal in Calculations.getAll())
-            {
-                Console.WriteLine(cal.getId() + " - " + cal.getPrettyName());
-            }
-            Console.WriteLine("");
-            
-            string stringId = Console.ReadLine();
-            int id;
-            
+            startProgram();
+        }
+        
+        private static void startProgram()
+        {
             try
             {
-                id = Int32.Parse(stringId);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Hatalı işlem numarası girildi.");
-                return;
-            }
-
-            Calculation calculation = Calculations.getById(id);
-            if (calculation != null)
-            {
-                Console.WriteLine("Seçilen işlem: " + calculation.getPrettyName());
-
-                if (calculation.needsTwoNumber())
+                Console.WriteLine("Merhaba! Lütfen yapacağınız işlemin numarasını giriniz: ");
+                foreach (var cal in Calculations.getAll())
                 {
-                    Console.WriteLine("Lütfen birinci sayıyı giriniz: ");
-                    string number1Str = Console.ReadLine();
-                
-                    double number1;
+                    Console.WriteLine(cal.getId() + " - " + cal.getPrettyName());
+                }
+                Console.WriteLine("");
+            
+                int id = Int32.Parse(Console.ReadLine());
 
-                    try
-                    {
-                        number1 = Double.Parse(number1Str);
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine("Girilen değer bir sayı olmalıdır.");
-                        return;
-                    }
+                Calculation calculation = Calculations.getById(id);
+                if (calculation != null)
+                {
+                    Console.WriteLine("Seçilen işlem: " + calculation.getPrettyName());
 
-                    Console.WriteLine("Lütfen ikinci sayıyı giriniz: ");
-                    string number2Str = Console.ReadLine();
+                    if (calculation.needsTwoNumber())
+                    {
+                        Console.WriteLine("Lütfen birinci sayıyı giriniz: ");
+                        double number1 = Double.Parse(Console.ReadLine());
 
-                    double number2;
+                        Console.WriteLine("Lütfen ikinci sayıyı giriniz: ");
+                        double number2 = Double.Parse(Console.ReadLine());
                 
-                    try
-                    {
-                        number2 = Double.Parse(number2Str);
+                        Console.WriteLine("");
+                        Console.WriteLine("Sonuç: " + calculation.calculate(number1, number2));
                     }
-                    catch (Exception e)
+                    else
                     {
-                        Console.WriteLine("Girilen değer bir sayı olmalıdır.");
-                        return;
+                        Console.WriteLine("Lütfen sayıyı giriniz: ");
+                        double number = Double.Parse(Console.ReadLine());
+                    
+                        Console.WriteLine("");
+                        Console.WriteLine("Sonuç: " + calculation.calculate(number));
                     }
-                
-                    Console.WriteLine("");
-                    Console.WriteLine("İşlemin sonucu: " + calculation.calculate(number1, number2));
+                    
+                    Thread.Sleep(3000);
+                    startProgram();
                 }
                 else
                 {
-                    Console.WriteLine("Lütfen sayıyı giriniz: ");
-                    string numberStr = Console.ReadLine();
-                
-                    double number;
-
-                    try
-                    {
-                        number = Double.Parse(numberStr);
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine("Girilen değer bir sayı olmalıdır.");
-                        return;
-                    }
-                    
-                    Console.WriteLine("");
-                    Console.WriteLine("İşlemin sonucu: " + calculation.calculate(number));
+                    throw new Exception("Seçilen işlem bulunamadı.");
                 }
             }
-            else
+            catch (Exception exception)
             {
-                Console.WriteLine("Seçilen işlem bulunamadı.");
+                String message = exception.Message;
+                
+                if (exception.GetType() == typeof(FormatException))
+                {
+                    message = "Girilen değer bir sayı olmalıdır.";
+                }
+                
+                Console.WriteLine("Hata: " + message);
+                Thread.Sleep(3000);
+                startProgram();
             }
         }
     }
