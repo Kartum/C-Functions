@@ -33,38 +33,62 @@ namespace simpleCalculatorInCS
             if (calculation != null)
             {
                 Console.WriteLine("Seçilen işlem: " + calculation.getPrettyName());
-                Console.WriteLine("Lütfen birinci sayıyı giriniz: ");
-                string number1Str = Console.ReadLine();
-                
-                double number1;
 
-                try
+                if (calculation.needsTwoNumber())
                 {
-                    number1 = Double.Parse(number1Str);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Girilen değer bir sayı olmalıdır.");
-                    return;
-                }
-
-                Console.WriteLine("Lütfen ikinci sayıyı giriniz: ");
-                string number2Str = Console.ReadLine();
-
-                double number2;
+                    Console.WriteLine("Lütfen birinci sayıyı giriniz: ");
+                    string number1Str = Console.ReadLine();
                 
-                try
-                {
-                    number2 = Double.Parse(number2Str);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Girilen değer bir sayı olmalıdır.");
-                    return;
-                }
+                    double number1;
+
+                    try
+                    {
+                        number1 = Double.Parse(number1Str);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Girilen değer bir sayı olmalıdır.");
+                        return;
+                    }
+
+                    Console.WriteLine("Lütfen ikinci sayıyı giriniz: ");
+                    string number2Str = Console.ReadLine();
+
+                    double number2;
                 
-                Console.WriteLine("");
-                Console.WriteLine("İşlemin sonucu: " + calculation.calculate(number1, number2));
+                    try
+                    {
+                        number2 = Double.Parse(number2Str);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Girilen değer bir sayı olmalıdır.");
+                        return;
+                    }
+                
+                    Console.WriteLine("");
+                    Console.WriteLine("İşlemin sonucu: " + calculation.calculate(number1, number2));
+                }
+                else
+                {
+                    Console.WriteLine("Lütfen sayıyı giriniz: ");
+                    string numberStr = Console.ReadLine();
+                
+                    double number;
+
+                    try
+                    {
+                        number = Double.Parse(numberStr);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Girilen değer bir sayı olmalıdır.");
+                        return;
+                    }
+                    
+                    Console.WriteLine("");
+                    Console.WriteLine("İşlemin sonucu: " + calculation.calculate(number));
+                }
             }
             else
             {

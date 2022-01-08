@@ -2,9 +2,11 @@
 {
     public enum CalculationType
     {
-        Addition
-        //Subtraction,
-        //Multiplication,
-        //Division
+        Addition,
+        Subtraction,
+        Multiplication,
+        Division,
+        Pow,
+        Abs
     }
 }

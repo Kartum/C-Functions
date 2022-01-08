@@ -41,8 +41,13 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="src\Calculations.cs" />
         <Compile Include="src\CalculationType.cs" />
+        <Compile Include="src\calculation\Abs.cs" />
         <Compile Include="src\calculation\Addition.cs" />
         <Compile Include="src\calculation\Calculation.cs" />
+        <Compile Include="src\calculation\Division.cs" />
+        <Compile Include="src\calculation\Multiplication.cs" />
+        <Compile Include="src\calculation\Pow.cs" />
+        <Compile Include="src\calculation\Subtraction.cs" />
         <Compile Include="src\Program.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

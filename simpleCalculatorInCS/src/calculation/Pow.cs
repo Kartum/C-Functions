@@ -1,15 +1,17 @@
-﻿namespace simpleCalculatorInCS.calculation
+﻿using System;
+
+namespace simpleCalculatorInCS.calculation
 {
-    public class Addition : Calculation
+    public class Pow : Calculation
     {
         public override int getId()
         {
-            return 1;
+            return 5;
         }
         
         public override string getPrettyName()
         {
-            return "Toplama";
+            return "Üs Alma";
         }
         
         public override bool needsTwoNumber()
@@ -19,7 +21,7 @@
         
         public override double calculate(double number1, double number2)
         {
-            return number1 + number2;
+            return Math.Pow(number1, number2);
         }
     }
 }

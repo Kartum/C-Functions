@@ -1,15 +1,15 @@
 ﻿namespace simpleCalculatorInCS.calculation
 {
-    public class Addition : Calculation
+    public class Division : Calculation
     {
         public override int getId()
         {
-            return 1;
+            return 4;
         }
         
         public override string getPrettyName()
         {
-            return "Toplama";
+            return "Bölme";
         }
         
         public override bool needsTwoNumber()
@@ -19,7 +19,7 @@
         
         public override double calculate(double number1, double number2)
         {
-            return number1 + number2;
+            return number1 / number2;
         }
     }
 }

@@ -6,6 +6,11 @@
         {
             return 0;
         }
+        
+        public virtual double calculate(double number)
+        {
+            return 0;
+        }
 
         public virtual string getPrettyName()
         {
@@ -15,6 +20,11 @@
         public virtual int getId()
         {
             return 0;
+        }
+        
+        public virtual bool needsTwoNumber()
+        {
+            return true;
         }
     }
 }
